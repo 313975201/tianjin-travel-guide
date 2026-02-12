@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天津春节旅游攻略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .activity-card {
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: #3b82f6;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.81rem;
+            top: 1.25rem;
+            width: 0.25rem;
+            height: calc(100% - 0.75rem);
+            background-color: #e5e7eb;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+
+            /* 头部优化 */
+            header {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+                margin-bottom: 0.75rem;
+            }
+
+            header p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            /* 标签优化 */
+            header .flex-wrap {
+                gap: 0.5rem;
+            }
+
+            header .bg-white\/20 {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            /* 标题优化 */
+            section h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            /* 卡片优化 */
+            .activity-card {
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .activity-card h3 {
+                font-size: 1.125rem;
+            }
+
+            /* 时间线优化 */
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item::before {
+                left: 0.25rem;
+                width: 0.625rem;
+                height: 0.625rem;
+            }
+
+            .timeline-item::after {
+                left: 0.5rem;
+            }
+
+            .timeline-item .bg-gray-50 {
+                padding: 0.875rem;
+            }
+
+            .timeline-item h4 {
+                font-size: 1rem;
+            }
+
+            .timeline-item p {
+                font-size: 0.875rem;
+            }
+
+            /* 地址和交通信息优化 */
+            .timeline-item .text-sm {
+                font-size: 0.75rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-item .text-sm i {
+                margin-bottom: 0.25rem;
+            }
+
+            /* 地图容器优化 */
+            .map-container {
+                height: 300px;
+            }
+
+            /* 食宿信息优化 */
+            .bg-gray-50 {
+                padding: 0.875rem;
+            }
+
+            /* 紧急电话优化 */
+            .flex.justify-between {
+                font-size: 0.875rem;
+            }
+
+            /* 注意事项优化 */
+            .fa-check-circle {
+                font-size: 0.875rem;
+            }
+
+            /* 底部优化 */
+            footer {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            footer h3 {
+                font-size: 1rem;
+            }
+
+            footer p {
+                font-size: 0.875rem;
+            }
+
+            /* 整体间距优化 */
+            section {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            /* 网格间距优化 */
+            .grid {
+                gap: 1rem;
+            }
+        }
+
+        /* 小屏幕手机优化 */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+
+            /* 防止文字过小 */
+            body {
+                font-size: 16px;
+            }
+        }
+
+        /* 横屏模式优化 */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .map-container {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- 头部区域 -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">天津春节旅游攻略</h1>
+            <p class="text-xl text-center mb-6">2026年春节 · 5天4晚欢乐行</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 flex items-center">
+                    <i class="fa fa-calendar mr-2"></i>
+                    <span>2026年2月10日-2月14日</span>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 flex items-center">
+                    <i class="fa fa-sun-o mr-2"></i>
+                    <span>春节期间 · 气温 -5℃~5℃</span>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 flex items-center">
+                    <i class="fa fa-map-marker mr-2"></i>
+                    <span>天津市区 + 周边</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 行程概览 -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">行程概览</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                <!-- 第一天 -->
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600 activity-card">
+                    <h3 class="text-xl font-bold mb-3">Day 1</h3>
+                    <p class="text-gray-700 mb-4">市区文化体验</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>古文化街（庙会）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>意式风情区</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>天津之眼（夜景）</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 第二天 -->
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600 activity-card">
+                    <h3 class="text-xl font-bold mb-3">Day 2</h3>
+                    <p class="text-gray-700 mb-4">历史与现代</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>五大道</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>天津博物馆</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>海河夜游</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 第三天 -->
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600 activity-card">
+                    <h3 class="text-xl font-bold mb-3">Day 3</h3>
+                    <p class="text-gray-700 mb-4">滨海新区</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>国家海洋博物馆</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>滨海图书馆</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>滨海新区夜景</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 第四天 -->
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600 activity-card">
+                    <h3 class="text-xl font-bold mb-3">Day 4</h3>
+                    <p class="text-gray-700 mb-4">杨柳青古镇</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>杨柳青古镇</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>石家大院</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>古镇灯展</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 第五天 -->
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600 activity-card">
+                    <h3 class="text-xl font-bold mb-3">Day 5</h3>
+                    <p class="text-gray-700 mb-4">休闲与购物</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>水西公园（新春游园会）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>和平路商业街</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-blue-600 mt-1 mr-2"></i>
+                            <span>天津特色美食</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 详细行程 -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">详细行程</h2>
+
+            <!-- 第一天详细行程 -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <span
+                        class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">1</span>
+                    市区文化体验
+                </h3>
+                <div class="space-y-6">
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">09:00-12:00 古文化街</h4>
+                            <p class="text-gray-700 mb-3">春节期间的古文化街热闹非凡，有传统庙会、民俗表演和特色小吃。可以参观天后宫、购买天津特产如泥人张、杨柳青年画等。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市南开区东门外大街</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：地铁2号线东南角站B出口步行5分钟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">12:00-13:30 午餐</h4>
+                            <p class="text-gray-700 mb-3">在古文化街附近品尝天津特色小吃，推荐狗不理包子、耳朵眼炸糕、十八街麻花等。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-cutlery mr-2"></i>
+                                <span>推荐餐厅：古文化街小吃街、天津菜馆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">14:00-17:00 意式风情区</h4>
+                            <p class="text-gray-700 mb-3">参观意大利风格的建筑，感受异国风情。可以游览马可·波罗广场、梁启超故居等景点。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市河北区自由道29号</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：从古文化街打车约10分钟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">18:00-20:00 天津之眼</h4>
+                            <p class="text-gray-700 mb-3">晚上7点后乘坐天津之眼，欣赏海河两岸的夜景，春节期间灯光会更加漂亮。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市红桥区李公祠大街与五马路交口</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：从意式风情区打车约15分钟</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二天详细行程 -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <span
+                        class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">2</span>
+                    历史与现代
+                </h3>
+                <div class="space-y-6">
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">09:00-12:00 五大道</h4>
+                            <p class="text-gray-700 mb-3">参观历史建筑，感受小洋楼文化。可以乘坐马车游览，或者骑行共享单车慢慢欣赏。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市和平区大理道</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：地铁1号线小白楼站C出口步行10分钟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">12:00-13:30 午餐</h4>
+                            <p class="text-gray-700 mb-3">在五大道附近的餐厅用餐，推荐尝试天津菜或西餐。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-cutlery mr-2"></i>
+                                <span>推荐餐厅：五大道附近的西餐厅、天津菜馆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">14:00-17:00 天津博物馆</h4>
+                            <p class="text-gray-700 mb-3">了解天津的历史文化，参观博物馆的常设展览和临时展览。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市河西区平江道62号</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：从五大道打车约15分钟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">18:00-20:00 海河夜游</h4>
+                            <p class="text-gray-700 mb-3">乘坐海河游船，欣赏春节期间的灯光秀，感受天津的夜景魅力。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市河北区大悲院码头</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：从天津博物馆打车约20分钟</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三天详细行程 -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <span
+                        class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">3</span>
+                    滨海新区
+                </h3>
+                <div class="space-y-6">
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">09:00-12:30 国家海洋博物馆</h4>
+                            <p class="text-gray-700 mb-3">了解海洋知识，参观各种海洋生物标本和展览，适合全家游玩。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市滨海新区中新生态城海轩道377号</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：从市区乘坐地铁9号线到东海路站，换乘公交或打车约20分钟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">12:30-13:30 午餐</h4>
+                            <p class="text-gray-700 mb-3">在滨海新区用餐，推荐尝试海鲜。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-cutlery mr-2"></i>
+                                <span>推荐餐厅：滨海新区海鲜餐厅</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">14:00-16:00 滨海图书馆</h4>
+                            <p class="text-gray-700 mb-3">参观网红打卡地，建筑设计独特，有"书山"之称。可以在里面阅读、拍照。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市滨海新区中央大道与紫云公园交口</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：从国家海洋博物馆打车约15分钟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">16:30-18:30 返回市区</h4>
+                            <p class="text-gray-700 mb-3">乘坐地铁或打车返回市区，休息调整。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四天详细行程 -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <span
+                        class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">4</span>
+                    杨柳青古镇
+                </h3>
+                <div class="space-y-6">
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">09:00-10:00 前往杨柳青古镇</h4>
+                            <p class="text-gray-700 mb-3">从市区乘坐公交车或打车前往杨柳青古镇，车程约1小时。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-bus mr-2"></i>
+                                <span>交通：市区乘坐175路、672路公交车到杨柳青站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">10:00-12:00 游览古镇</h4>
+                            <p class="text-gray-700 mb-3">参观杨柳青古镇的老街、古民居，感受传统古镇的魅力。春节期间有特色活动和表演。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市西青区杨柳青镇</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">12:00-13:30 午餐</h4>
+                            <p class="text-gray-700 mb-3">在古镇内用餐，推荐尝试当地特色美食。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-cutlery mr-2"></i>
+                                <span>推荐餐厅：古镇内的特色餐馆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">14:00-16:00 石家大院</h4>
+                            <p class="text-gray-700 mb-3">参观石家大院，了解杨柳青的历史文化和民俗。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市西青区杨柳青镇估衣街47号</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">17:00-19:00 古镇灯展</h4>
+                            <p class="text-gray-700 mb-3">欣赏杨柳青古镇的灯展，春节期间的灯展非常壮观，是当地的特色活动。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市西青区杨柳青镇</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第五天详细行程 -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <span
+                        class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">5</span>
+                    休闲与购物
+                </h3>
+                <div class="space-y-6">
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">09:00-12:00 水西公园</h4>
+                            <p class="text-gray-700 mb-3">参观水西公园的新春游园会，有冰雕展览、传统庙会等活动，适合拍照留念。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市西青区保山西道与外环西路交口</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：地铁2号线曹庄站A出口步行10分钟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">12:00-13:30 午餐</h4>
+                            <p class="text-gray-700 mb-3">在公园附近用餐，推荐尝试天津特色美食。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-cutlery mr-2"></i>
+                                <span>推荐餐厅：公园附近的天津菜馆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">14:00-17:00 和平路商业街</h4>
+                            <p class="text-gray-700 mb-3">在和平路商业街购物，购买天津特产和纪念品，体验天津的商业文化。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>地址：天津市和平区和平路</span>
+                                <i class="fa fa-bus ml-4 mr-2"></i>
+                                <span>交通：地铁3号线和平路站C出口</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold text-lg mb-2">17:00-19:00 告别晚宴</h4>
+                            <p class="text-gray-700 mb-3">在天津市区的特色餐厅享用告别晚宴，品尝天津特色美食，结束愉快的旅程。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-cutlery mr-2"></i>
+                                <span>推荐餐厅：天津市区的特色菜馆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 交通信息 -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">交通信息</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 交通方式 -->
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fa fa-bus text-blue-600 mr-2"></i>
+                        交通方式推荐
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                <i class="fa fa-subway text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">地铁</h4>
+                                <p class="text-gray-700">天津地铁网络覆盖市区主要景点，是最便捷的交通方式。推荐购买一日票或三日票，节省费用。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                <i class="fa fa-bicycle text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">共享单车</h4>
+                                <p class="text-gray-700">适合五大道、意式风情区等景区内的短途出行，方便灵活。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                <i class="fa fa-taxi text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">出租车</h4>
+                                <p class="text-gray-700">适合较远的景点或多人同行，记得避开早晚高峰。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                <i class="fa fa-bus text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">公交车</h4>
+                                <p class="text-gray-700">前往周边景点如杨柳青古镇时可以选择公交车，经济实惠。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 地图 -->
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fa fa-map text-blue-600 mr-2"></i>
+                        旅游路线地图
+                    </h3>
+                    <div class="map-container">
+                        <!-- 这里将集成高德地图 -->
+                        <div id="amap" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 食宿信息 -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">食宿信息</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 住宿推荐 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-hotel text-blue-600 mr-2"></i>
+                        住宿推荐
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">和平区</h4>
+                            <p class="text-gray-700 mb-3">位于市中心，靠近五大道、意式风情区等主要景点，交通便利。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-2"></i>
+                                <span>推荐酒店：天津丽思卡尔顿酒店、天津和平宾馆</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">南开区</h4>
+                            <p class="text-gray-700 mb-3">靠近古文化街、天津大学等景点，性价比高。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star-o text-yellow-400 mr-2"></i>
+                                <span>推荐酒店：天津南开大学会议中心、天津富蓝特大酒店</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">滨海新区</h4>
+                            <p class="text-gray-700 mb-3">第三天游览滨海新区时可以选择在此住宿，靠近国家海洋博物馆等景点。</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star text-yellow-400 mr-1"></i>
+                                <i class="fa fa-star-o text-yellow-400 mr-2"></i>
+                                <span>推荐酒店：天津滨海喜来登酒店、天津生态城世茂希尔顿酒店</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 餐饮推荐 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-cutlery text-blue-600 mr-2"></i>
+                        餐饮推荐
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">天津特色小吃</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• 狗不理包子：天津最有名的包子，皮薄馅大</li>
+                                <li>• 耳朵眼炸糕：外酥里嫩，香甜可口</li>
+                                <li>• 十八街麻花：酥脆香甜，品种多样</li>
+                                <li>• 天津锅巴菜：传统早餐，搭配烧饼</li>
+                                <li>• 熟梨糕：传统小吃，香甜软糯</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">天津特色菜肴</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• 罾蹦鲤鱼：传统名菜，酸甜可口</li>
+                                <li>• 天津烧海参：营养丰富，味道鲜美</li>
+                                <li>• 八大碗：传统宴席菜品，种类丰富</li>
+                                <li>• 贴饽饽熬小鱼：农家风味，地道天津味</li>
+                                <li>• 糖醋面筋：传统素菜，酸甜可口</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">推荐餐厅</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• 天津菜馆：传统天津菜，环境优雅</li>
+                                <li>• 狗不理包子总店：品尝正宗狗不理包子</li>
+                                <li>• 耳朵眼炸糕店：品尝正宗耳朵眼炸糕</li>
+                                <li>• 十八街麻花总店：购买正宗十八街麻花</li>
+                                <li>• 五大道西餐厅：品尝西餐，环境优美</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实用信息 -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">实用信息</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 紧急电话 -->
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fa fa-phone text-blue-600 mr-2"></i>
+                        紧急电话
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex justify-between">
+                            <span>报警电话</span>
+                            <span class="font-bold">110</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>急救电话</span>
+                            <span class="font-bold">120</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>消防电话</span>
+                            <span class="font-bold">119</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>旅游咨询</span>
+                            <span class="font-bold">12301</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>天气预报</span>
+                            <span class="font-bold">12121</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>交通咨询</span>
+                            <span class="font-bold">122</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 注意事项 -->
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fa fa-exclamation-circle text-blue-600 mr-2"></i>
+                        注意事项
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>春节期间天津气温较低，建议穿着保暖衣物，如羽绒服、围巾、手套等。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>春节期间是旅游旺季，热门景点人流量较大，建议提前规划行程，避开高峰时段。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>部分景点需要提前预约，如天津博物馆、国家海洋博物馆等，建议提前在官网或APP预约。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>天津的饮食偏咸，口味清淡的游客可以提前告知餐厅调整口味。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>在古文化街等景点购买特产时，建议货比三家，选择正规店铺购买。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>出行前关注天气情况，如有雨雪天气，注意道路安全。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">天津春节旅游攻略</h3>
+                    <p class="text-gray-400">2026年春节 · 5天4晚欢乐行</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fa fa-weixin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fa fa-weibo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fa fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                <p>© 2026 天津旅游攻略 | 本攻略仅供参考，实际出行请以当地情况为准</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 高德地图API -->
+    <script src="https://webapi.amap.com/maps?v=2.0&key=f15f0469f4bbb4c018295e4fdeb4cb45"></script>
+    <script>
+        // 地图初始化
+        var map;
+
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                // 初始化地图
+                map = new AMap.Map('amap', {
+                    zoom: 11,
+                    center: [117.200983, 39.084158],
+                    viewMode: '2D'
+                });
+
+                // 添加标记点
+                var markers = [
+                    { position: [117.198361, 39.090797], title: '古文化街' },
+                    { position: [117.215034, 39.138722], title: '意式风情区' },
+                    { position: [117.190858, 39.142995], title: '天津之眼' },
+                    { position: [117.198758, 39.115427], title: '五大道' },
+                    { position: [117.221063, 39.084637], title: '天津博物馆' },
+                    { position: [117.723074, 39.008823], title: '国家海洋博物馆' },
+                    { position: [117.733304, 39.013369], title: '滨海图书馆' },
+                    { position: [117.022748, 39.079708], title: '杨柳青古镇' },
+                    { position: [117.091698, 39.083488], title: '水西公园' },
+                    { position: [117.217149, 39.130821], title: '和平路商业街' }
+                ];
+
+                // 添加标记
+                markers.forEach(function (item) {
+                    new AMap.Marker({
+                        position: item.position,
+                        title: item.title,
+                        map: map
+                    });
+                });
+
+                // 添加路线
+                new AMap.Polyline({
+                    path: [
+                        [117.198361, 39.090797],
+                        [117.215034, 39.138722],
+                        [117.190858, 39.142995],
+                        [117.198758, 39.115427],
+                        [117.221063, 39.084637],
+                        [117.723074, 39.008823],
+                        [117.733304, 39.013369],
+                        [117.022748, 39.079708],
+                        [117.091698, 39.083488],
+                        [117.217149, 39.130821]
+                    ],
+                    strokeColor: '#3b82f6',
+                    strokeWeight: 4,
+                    strokeOpacity: 0.8,
+                    map: map
+                });
+
+                // 添加控件
+                map.addControl(new AMap.Scale());
+                map.addControl(new AMap.ToolBar());
+
+            } catch (e) {
+                console.error('地图加载失败:', e);
+                document.getElementById('amap').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;">地图加载失败，请刷新页面重试</div>';
+            }
+        });
+    </script>
+</body>
+
+</html>
